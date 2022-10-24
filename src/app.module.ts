@@ -14,6 +14,7 @@ import { JwtMiddleware } from './jwt/jwt.middleware';
 import { JwtModule } from './jwt/jwt.module';
 import { MailModule } from './mail/mail.module';
 import { Category } from './restaurants/entities/category.entity';
+import { Dish } from './restaurants/entities/dish.entity';
 import { Restaurant } from './restaurants/entities/restaurant.entity';
 import { RestaurantsModule } from './restaurants/restaurants.module';
 import { User } from './users/entities/user.entity';
@@ -54,7 +55,7 @@ import { UsersModule } from './users/users.module';
       database: process.env.DB_DATABASE,
       synchronize: process.env.NODE_ENV !== 'prod', // true일 경우, 데이터베이스를 내가 작성한 module로 마이그레이션 하겠다는 의미
       logging: process.env.NODE_ENV !== 'prod', // db로그를 콘솔에 표시하겠다는 뜻.
-      entities: [User, Verification, Category, Restaurant],
+      entities: [User, Verification, Category, Restaurant, Dish],
     }),
     UsersModule,
     RestaurantsModule,
